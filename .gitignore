@@ -6,3 +6,5 @@ bin/
 __pycache__/
 *.out
 .mypy_cache/
+.vscode/
+pyvenv.cfg

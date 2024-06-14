@@ -47,7 +47,7 @@ deck0 = {
 
 starmap = getfilestr("assets/asciiart/starmap.txt")
 
-type Star = Literal["ALETHIA", "AMPHITRYON", "LIANSHAN", "OB", "CADMUS", "TOKUGAWA", "APOLLONIA", "HAN_FEI"]
+type StarName = Literal["ALETHIA", "AMPHITRYON", "LIANSHAN", "OB", "CADMUS", "TOKUGAWA", "APOLLONIA", "HAN FEI"]
 
 starmapAdjacencyList = {
     "ALETHIA": [("AMPHITRYON", 256), ("LIANSHAN", 128)],

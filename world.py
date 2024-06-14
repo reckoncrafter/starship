@@ -1,10 +1,12 @@
 import curses
 from curses import wrapper
 import numpy as np
+from numpy.typing import NDArray
 from random import choices, choice, seed, randint
 from dataclasses import dataclass
 from typing import Self
 from util import PlayerDied
+
 
 #tiles = range(ord('\u2591'), ord('\u2593'))
 tiles = ['\u2591', '\u2592', '\u2593']
@@ -46,11 +48,14 @@ class CollectedResources:
                     return self.oxides * self.CONV_OXIDES
                 case "hydrocarbons":
                     return self.hydrocarbons * self.CONV_HC
+                case _:
+                    raise ValueError
 
 class World:
     #                              TILE, MIN_SIZE, MAX_SIZE, NUM_CLUSTERS
-    type ClusterDefinition = tuple[str,  int,      int,      int]
-    def __init__(self, base_tile: str, size_x: int, size_y: int, random_seed: int, random_tiles: list[tuple[str, int]], cluster_tiles: ClusterDefinition):
+    type ClusterDefinition = list[tuple[str,  int,      int,      int]]
+    type RandomTiles = list[tuple[str, float]]
+    def __init__(self, base_tile: str, size_x: int, size_y: int, random_seed: int, random_tiles: RandomTiles, cluster_tiles: ClusterDefinition):
         self.base_tile = base_tile
         self.size_x = size_x
         self.size_y = size_y
@@ -74,13 +79,13 @@ class World:
             self.random_clusters(ctile[1], ctile[2], ctile[3], ctile[0])
     
 
-    def get_tile(self, y, x) -> int:
+    def get_tile(self, y:int, x:int) -> int:
         return self.__tilemap[y][x]
 
-    def set_tile(self, y, x, tile) -> None:
+    def set_tile(self, y:int, x:int, tile) -> None:
         self.__tilemap[y][x] = ord(tile)
 
-    def get_tile_color(self, y, x) -> int:
+    def get_tile_color(self, y:int, x:int) -> int:
         return self.__colormap[y][x]
     
     def set_tile_color(self, y, x, color_pair) -> None:
@@ -223,8 +228,8 @@ def main(stdscr, VIEWPORT: tuple[int, int], world: World, initial_position = (50
                 if not loc_x+1 >= WORLDSIZE_X:
                     loc_x += 1
             case _:
-                raise(InputError(move))
-                break
+                #raise(InputError(move))
+                pass
         playerLifeSupport -= 1
         if playerLifeSupport <= 0:
             raise PlayerDied("empty life support module.")

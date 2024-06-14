@@ -22,7 +22,7 @@ def main(stdscr):
 
     # state variables
     warpCoreEjected = False
-    currentStar: Star = "HAN FEI"
+    currentStar: StarName = "HAN FEI"
     currentPlanet: str | None = None
     fuelUnits = 256
     maxFuelUnits = 25565
@@ -259,10 +259,10 @@ def main(stdscr):
                             pass
 
                     elif(sel == "2"):
-                        dialogueBox(f"water: {collectedResources.water} -> {collectedResources.convert("water")}u\
-                            \n hydrocarbons: {collectedResources.hydrocarbons} -> {collectedResources.convert("hydrocarbons")}u\
-                            \n oxides: {collectedResources.oxides} -> {collectedResources.convert("oxides")}u\
-                            \n total fuel to be refined: {collectedResources.convert()}u")
+                        dialogueBox(f"""water: {collectedResources.water} -> {collectedResources.convert("water")}
+hydrocarbons: {collectedResources.hydrocarbons} -> {collectedResources.convert("hydrocarbons")}
+oxides: {collectedResources.oxides} -> {collectedResources.convert("oxides")}
+total fuel to be ref:: Star ined: {collectedResources.convert()}u""")
 
                 elif(obj[0] == "»"): # flight computer
                     sel = menuDialogue(" select autopilot command:",\
