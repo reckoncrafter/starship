@@ -1,0 +1,6 @@
+       * : Main star
+       % : Binary star system 
+       - : 1 AU
+    XX-X : Planet
+       | : Asteroid belt
+ [X-Xx,] : Significant moons

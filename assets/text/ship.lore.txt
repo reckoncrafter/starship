@@ -1,0 +1,16 @@
+You are aboard the Far Heart, a Wayfinder class exploratory vessel.
+This ship is registered on Mars (Sol 4) by Starship Captain Kos Brenner.
+
+This Wayfinder is equipped with an array of computer automated scientific
+instruments, desgined to be operated by only one pilot with the aid
+of the ship computer.
+
+This Wayfinder is equipped with a debris deflector shield suitable
+for speeds up to 25c.
+
+This Wayfinder is equipped with a 50 megawatt mining laser, useful for
+ablating material off the surface of asteroids.
+
+This Wayfinder has been modified such that it has the extra fuel capacity
+needed for extreme deep space exploration, and thus has a reduced
+cargo capacity.

@@ -1,0 +1,10 @@
+    MISSION BREIFING: CAPTAIN BRENNER
+    UNCHARTED SPACE SURVEY MISSION
+
+Hello, Captain.
+We'd like to congratulate you on your assignment
+to explore the uncharted FAIRHAVEN constellation.
+
+We understand that this is quite a large assignment,
+given the mission duration.
+...
